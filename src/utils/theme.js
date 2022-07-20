@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
-const mainBrandColor = '#BB5A3B';
-const lightShades = '#FEF2F0';
+const mainBrandColor = '#a12c2f';
+const lightShades = '#f5a425';
 
 const theme = {
   // It can be liberally applied to your layout as its main identity.
@@ -18,10 +18,11 @@ const theme = {
   // Use as the text color for dark-on-light designs,
   // or as the background for inverted designs.
   primaryColor: mainBrandColor,
-  secondaryColor: '#lightShades',
-  fontSizeSmall: '15px',
-  fontSizeMedium: '27px',
-  fontSizeLarge: '70px',
+  secondaryColor: lightShades,
+  fontSizeSmall: '13px',
+  fontSize: '14px',
+  fontSizeMedium: '18px',
+  fontSizeLarge: '36px',
   lineHeight: '30px',
   dangerColor: '#f44336',
   primaryFontFamily: "'Poppins', sans-serif",
@@ -33,13 +34,7 @@ const GlobalStyle = createGlobalStyle`
 body {
   font-family: ${theme.primaryFontFamily} !important;
   color: ${theme.darkAccent} !important;
-}
-.max-height {
-  max-height: none !important;
-}
-.content {
-  img {width: 100%;}
-}
+
 `;
 
 export { GlobalStyle };
