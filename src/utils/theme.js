@@ -23,7 +23,7 @@ const theme = {
   fontSize: '14px',
   fontSizeMedium: '18px',
   fontSizeLarge: '36px',
-  lineHeight: '30px',
+  lineHeight: '25px',
   dangerColor: '#f44336',
   primaryFontFamily: "'Poppins', sans-serif",
 };
@@ -33,7 +33,7 @@ export default theme;
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: ${theme.primaryFontFamily} !important;
-  color: ${theme.darkAccent} !important;
+  color: white;
 
 `;
 
