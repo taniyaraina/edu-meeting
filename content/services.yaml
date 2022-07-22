@@ -1,0 +1,15 @@
+services:
+- image: '/images/service-icon-01.png'
+  title: 'Best Students'
+  description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
+  facilisis massa non vestibulum.'
+
+- image: '/images/service-icon-01.png'
+  title: 'Best Students'
+  description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
+  facilisis massa non vestibulum.'
+
+- image: '/images/service-icon-01.png'
+  title: 'Best Students'
+  description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
+  facilisis massa non vestibulum.'

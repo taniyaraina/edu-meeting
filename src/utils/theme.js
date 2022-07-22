@@ -34,6 +34,8 @@ const GlobalStyle = createGlobalStyle`
 body {
   font-family: ${theme.primaryFontFamily} !important;
   color: white;
+  background: url("/images/background-image.jpg");
+  background-attachment: fixed;
 
 `;
 
