@@ -10,7 +10,6 @@ const Section = styled.div`
     background-image: url('/images/service-item-bg.jpg');
     background-size: cover;
     background-position: center center;
-    border-radius: 20px;
   }
   h4 {
     font-size: ${(props) => props.theme.fontSizeMedium};

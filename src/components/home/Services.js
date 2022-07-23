@@ -55,21 +55,21 @@ const Services = ({ serviceData }) => {
       {
         breakpoint: 1181,
         settings: {
-          slidesPerRow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesPerRow: 2,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesPerRow: 1,
+          slidesToShow: 1,
           slidesToScroll: 1,
           rows: 1,
           dots: false,
@@ -80,7 +80,7 @@ const Services = ({ serviceData }) => {
 
   const renderArrows = () => {
     return (
-      <div className="slider-arrow">
+      <div className="slider-arrow is-hidden-mobile">
         <div>
           <button
             type="button"

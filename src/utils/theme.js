@@ -39,6 +39,18 @@ body {
   background-position: center center !important;
   background-size: cover !important;
 }
+.card,.input,textarea {border-radius: 20px !important;}
+.line {
+    border-bottom: 1px solid rgba(250, 250, 250, 0.15);
+    border-top: 1px solid rgba(250, 250, 250, 0.15);
+  }
+  input,textarea {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #f7f7f7 !important;
+    font-size: ${theme.fontSizeSmall} !important;
+    color: #7a7a7a;
+  }
 `;
 
 export { GlobalStyle };
