@@ -3,10 +3,11 @@ import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
-import Image from 'next/image';
+import ServiceCard from '../atoms/ServiceCard';
 
 const ArrowsContainer = styled.div`
-  width: 100%;
+  position: relative;
+  bottom: 10rem;
   @media only screen and (max-width: 768px) {
     position: relative;
     justify-content: center;
@@ -80,12 +81,14 @@ const Services = ({ serviceData }) => {
   const renderArrows = () => {
     return (
       <div className="slider-arrow">
-        <button
-          type="button"
-          className="arrow-btn prev"
-          onClick={() => customSlider.current.slickPrev()}>
-          <FaChevronLeft />
-        </button>
+        <div>
+          <button
+            type="button"
+            className="arrow-btn prev"
+            onClick={() => customSlider.current.slickPrev()}>
+            <FaChevronLeft />
+          </button>
+        </div>
         <button
           type="button"
           className="arrow-btn next"
@@ -97,63 +100,13 @@ const Services = ({ serviceData }) => {
   };
 
   return (
-    <>
-      <div className="section">
-        <div className="columns">
-          {serviceData.services &&
-            serviceData.services.map((item) => (
-              <Slider
-                {...settings}
-                ref={(slider) => (customSlider.current = slider)}>
-                <div className="">
-                  <div className="card">
-                    <div className="card-content">
-                      <Image src={item.image} width={60} height={60} />
-                      <h4 className="has-text-weight-semibold">{item.title}</h4>
-                      <div className="content">
-                        <p>{item.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card">
-                  <div className="card-content">
-                    <div className="content">
-                      Lorem ipsum leo risus, porta ac consectetur ac, vestibulum
-                      at eros. Donec id elit non mi porta gravida at eget metus.
-                      Cum sociis natoque penatibus et magnis dis parturient
-                      montes, nascetur ridiculus mus. Cras mattis consectetur
-                      purus sit amet fermentum.
-                    </div>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-content">
-                    <div className="content">
-                      Lorem ipsum leo risus, porta ac consectetur ac, vestibulum
-                      at eros. Donec id elit non mi porta gravida at eget metus.
-                      Cum sociis natoque penatibus et magnis dis parturient
-                      montes, nascetur ridiculus mus. Cras mattis consectetur
-                      purus sit amet fermentum.
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="has-text-black is-size-1">1</h3>
-                </div>
-                <div>
-                  <h3 className="has-text-black is-size-1">1</h3>
-                </div>
-                <div>
-                  <h3 className="has-text-black is-size-1">1</h3>
-                </div>
-              </Slider>
-            ))}
-          <ArrowsContainer>{renderArrows()}</ArrowsContainer>
-        </div>
-      </div>
-    </>
+    <div>
+      <Slider {...settings} ref={(slider) => (customSlider.current = slider)}>
+        {serviceData.services &&
+          serviceData.services.map((item) => <ServiceCard item={item} />)}
+      </Slider>
+      <ArrowsContainer>{renderArrows()}</ArrowsContainer>
+    </div>
   );
 };
 

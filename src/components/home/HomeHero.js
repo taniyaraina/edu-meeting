@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../atoms/Button';
 
 const Section = styled.div`
   .overlay {
@@ -51,11 +52,9 @@ const HomeHero = ({ ...props }) => {
               is taken from Pexels website, a group of young people by
               Pressmaster.
             </p>
-            <button
-              type="button"
-              className="button is-rounded px-5 py-5 is-size has-text-weight-medium has-text-white is-uppercase">
+            <Button className="button is-rounded px-5 py-5 is-size has-text-weight-medium has-text-white is-uppercase">
               Join Us Now!
-            </button>
+            </Button>
           </div>
         </div>
       </div>

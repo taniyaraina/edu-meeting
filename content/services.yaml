@@ -1,15 +1,30 @@
 services:
-- image: '/images/service-icon-01.png'
+- image: '/images/service-icon-03.png'
   title: 'Best Students'
   description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
   facilisis massa non vestibulum.'
 
-- image: '/images/service-icon-01.png'
-  title: 'Best Students'
+- image: '/images/service-icon-02.png'
+  title: 'Online Meeting'
+  description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
+  facilisis massa non vestibulum.'
+
+- image: '/images/service-icon-03.png'
+  title: 'Best Networking'
   description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
   facilisis massa non vestibulum.'
 
 - image: '/images/service-icon-01.png'
+  title: 'Best Education'
+  description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
+  facilisis massa non vestibulum.'
+
+- image: '/images/service-icon-02.png'
+  title: 'Best Teachers'
+  description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
+  facilisis massa non vestibulum.'
+
+- image: '/images/service-icon-03.png'
   title: 'Best Students'
   description: 'Suspendisse tempor mauris a sem elementum bibendum. Praesent
   facilisis massa non vestibulum.'
