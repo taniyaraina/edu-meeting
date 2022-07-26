@@ -100,7 +100,7 @@ const Services = ({ serviceData }) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <Slider {...settings} ref={(slider) => (customSlider.current = slider)}>
         {serviceData.services &&
           serviceData.services.map((item) => <ServiceCard item={item} />)}

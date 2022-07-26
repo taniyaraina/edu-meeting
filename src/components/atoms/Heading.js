@@ -12,13 +12,20 @@ const Section = styled.h1`
       : props.theme.fontSizeExtraLarge} !important;
 `;
 
-const Heading = ({ children, fontWeight, fontSize, isBlack, ...props }) => {
+const Heading = ({
+  children,
+  fontWeight,
+  fontSize,
+  isBlack,
+  isUppercase,
+  ...props
+}) => {
   return (
     <Section
       fontWeight={fontWeight}
       fontSize={fontSize}
       {...props}
-      className={`is-uppercase mb-4 is-size-3-mobile ${
+      className={`${isUppercase ? 'is-uppercase' : ''} mb-4 is-size-3-mobile ${
         isBlack ? 'has-text-black' : 'has-text-white'
       }`}>
       {children}

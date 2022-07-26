@@ -11,8 +11,8 @@ const Section = styled.div`
 
 const Contact = ({ data }) => {
   return (
-    <>
-      <Section className="columns is-vcentered">
+    <div className="container">
+      <Section className="columns is-vcentered mb-6 pb-6">
         <div className="column is-9">
           <ContactForm data={data} />
         </div>
@@ -21,7 +21,7 @@ const Contact = ({ data }) => {
         </div>
       </Section>
       <HorizontalLine />
-    </>
+    </div>
   );
 };
 

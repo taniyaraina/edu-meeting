@@ -12,7 +12,7 @@ const Section = styled.div`
 const ContactForm = ({ data }) => {
   return (
     <Section className="section is-multiline card has-text-black">
-      <Heading isBlack isLarge fontWeight>
+      <Heading isBlack isLarge fontWeight isUppercase>
         {data.contactTitle}
       </Heading>
       <HorizontalLine borderColor />
