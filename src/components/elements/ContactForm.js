@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Input from '../atoms/Input';
 import Button from '../atoms/Button';
+import Heading from '../atoms/Heading';
+import HorizontalLine from '../atoms/HorizontalLine';
 
 const Section = styled.div`
   margin-left: 0;
@@ -9,19 +11,36 @@ const Section = styled.div`
 
 const ContactForm = ({ data }) => {
   return (
-    <Section className="columns section is-multiline card has-text-centered has-text-black">
-      <div className="column is-4 pb-5">
-        <Input color className="p-4" type="text" placeholder="YOURNAME...*" />
+    <Section className="section is-multiline card has-text-black">
+      <Heading isBlack isLarge fontWeight>
+        {data.contactTitle}
+      </Heading>
+      <HorizontalLine borderColor />
+
+      <div className=" pt-6 field-body">
+        <div className=" field pb-5">
+          <Input color type="text" placeholder="YOURNAME...*" />
+        </div>
+        <div className=" field">
+          <Input color type="email" placeholder="YOUR EMAIL..." />
+        </div>
+        <div className=" field">
+          <Input color type="text" placeholder="SUBJECT...*" />
+        </div>
       </div>
-      <div className="column is-4">
-        <Input color className="p-4" type="email" placeholder="YOUR EMAIL..." />
+      <div className="pb-5 field is-horizontal">
+        <div className="field-body">
+          <div className="field">
+            <div className="control">
+              <textarea
+                className="textarea p-4 is-expanded"
+                placeholder="Textarea"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="column is-4">
-        <Input color className="p-4" type="text" placeholder="SUBJECT...*" />
-      </div>
-      <div className="column is-12 pb-6">
-        <textarea className="textarea p-4" placeholder="Textarea" />
-      </div>
+
       <Button bgcolor>{data.contactButton}</Button>
     </Section>
   );

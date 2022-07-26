@@ -22,8 +22,11 @@ const theme = {
   fontSizeSmall: '13px',
   fontSize: '14px',
   fontSizeMedium: '18px',
-  fontSizeLarge: '36px',
+  fontSizeLarge: '22px',
+  fontSizeExtraLarge: '36px',
   lineHeight: '25px',
+  fontWeight: '700',
+  fontWeightBold: '800',
   dangerColor: '#f44336',
   primaryFontFamily: "'Poppins', sans-serif",
 };
@@ -40,10 +43,6 @@ body {
   background-size: cover !important;
 }
 .card,.input,textarea {border-radius: 20px !important;}
-.line {
-    border-bottom: 1px solid rgba(250, 250, 250, 0.15);
-    border-top: 1px solid rgba(250, 250, 250, 0.15);
-  }
   input,textarea {
     border: none !important;
     box-shadow: none !important;

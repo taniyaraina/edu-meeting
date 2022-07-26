@@ -3,7 +3,7 @@ const Input = ({ className, error, ...props }) => {
     <div>
       <div className="control">
         <input
-          className={`input ${className}`}
+          className={`input pl-5 py-5 ${className}`}
           type=""
           placeholder=""
           {...props}
