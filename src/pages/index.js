@@ -6,14 +6,16 @@ import serviceData from '../../content/services.yaml';
 import homeData from '../../content/homePage.yaml';
 import Contact from '../components/home/Contact';
 import About from '../components/home/About';
+import Courses from '../components/home/Courses';
 
 const index = () => {
   return (
     <Layout data={homeData}>
       <HomeHero data={homeData} />
       <Services serviceData={serviceData} />
-      <Contact data={homeData} />
+      <Courses data={homeData} serviceData={serviceData} />
       <About data={homeData} />
+      <Contact data={homeData} />
     </Layout>
   );
 };

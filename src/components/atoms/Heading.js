@@ -18,16 +18,18 @@ const Heading = ({
   fontSize,
   isBlack,
   isUppercase,
+  paddingNone,
   ...props
 }) => {
   return (
     <Section
       fontWeight={fontWeight}
       fontSize={fontSize}
+      paddingNone={paddingNone}
       {...props}
-      className={`${isUppercase ? 'is-uppercase' : ''} mb-4 is-size-3-mobile ${
+      className={`${isUppercase ? 'is-uppercase' : ''}  mb-4 is-size-3-mobile ${
         isBlack ? 'has-text-black' : 'has-text-white'
-      }`}>
+      } ${paddingNone ? 'p-0' : 'p-4'}`}>
       {children}
     </Section>
   );

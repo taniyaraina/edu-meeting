@@ -9,52 +9,70 @@ const Section = styled.div`
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  .tile.is-child.notification.card {
+  .tile.is-child.card {
     background-color: rgba(250, 250, 250, 0.15);
   }
   .title {
     color: ${(props) => props.theme.lightShades};
   }
+  .image.is-64x64 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
-const About = ({ data, background }) => {
+const About = ({ data }) => {
   return (
-    <Section className="section" background={background}>
-      <Heading fontWeight>{data.aboutTitle}</Heading>
-      <div className="tile is-ancestor">
-        <div className="tile">
-          <div className="tile is-parent is-vertical is-5">
-            <article className="tile is-child notification card has-text-centered">
-              <p className="title">Vertical...</p>
-              <p className="subtitle has-text-white">Top tile</p>
-            </article>
-            <article className="tile is-child notification card">
-              <p className="title">...tiles</p>
-              <p className="subtitle">Bottom tile</p>
+    <Section className="section">
+      <div className="container">
+        <Heading fontWeight>{data.aboutTitle}</Heading>
+        <div className="tile is-ancestor">
+          <div className="tile">
+            <div className="tile is-parent is-vertical is-5">
+              <article className="tile is-child card is-flex is-justify-content-center is-align-items-center">
+                <div className="has-text-centered">
+                  <div>
+                    <p className="title">hfghdjh</p>
+                    <p className="subtitle has-text-white has-text-weight-medium">
+                      Succesed Students
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article className="tile is-child notification card">
+                <p className="title">...tiles</p>
+                <p className="subtitle">Bottom tile</p>
+              </article>
+            </div>
+
+            <div className="tile is-parent is-vertical is-5">
+              <article className="tile is-child notification card">
+                <p className="title">Vertical...</p>
+                <p className="subtitle">Top tile</p>
+              </article>
+              <article className="tile is-child notification card">
+                <p className="title">...tiles</p>
+                <p className="subtitle">Bottom tile</p>
+              </article>
+            </div>
+          </div>
+          <div className="tile is-parent is-5 p-0 is-relative">
+            <article className="tile is-child ">
+              <figure className="image is-4by3 ">
+                <Image
+                  className="card "
+                  src="/images/video-item-bg.jpg"
+                  layout="fill"
+                />
+              </figure>
+
+              <figure className="image is-64x64">
+                <Image src="/images/play-icon.png" layout="fill" />
+              </figure>
             </article>
           </div>
-
-          <div className="tile is-parent is-vertical is-5">
-            <article className="tile is-child notification card">
-              <p className="title">Vertical...</p>
-              <p className="subtitle">Top tile</p>
-            </article>
-            <article className="tile is-child notification card">
-              <p className="title">...tiles</p>
-              <p className="subtitle">Bottom tile</p>
-            </article>
-          </div>
-        </div>
-        <div className="tile is-parent is-5 card">
-          <article className="tile is-child card-image">
-            <figure className="image is-4by3">
-              <Image src="/images/video-item-bg.jpg" layout="fill" />
-            </figure>
-
-            {/* <figure className="image is-64x64">
-              <Image src="/images/play-icon.png" layout="fill" />
-            </figure> */}
-          </article>
         </div>
       </div>
     </Section>

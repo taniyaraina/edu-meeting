@@ -1,18 +1,26 @@
 /* eslint-disable no-return-assign */
 import React, { useRef } from 'react';
 import Slider from 'react-slick';
-import ArrowSlider from '../elements/ArrowSlider';
-
+import styled from 'styled-components';
 import ServiceCard from '../atoms/ServiceCard';
+import ArrowSlider from '../elements/ArrowSlider';
+import Heading from '../atoms/Heading';
+import HorizontalLine from '../atoms/HorizontalLine';
 
-const Services = ({ serviceData }) => {
+const Section = styled.div`
+  .card {
+    border-radius: 0px !important;
+  }
+`;
+
+const Courses = ({ data, serviceData }) => {
   const customSlider = useRef();
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
@@ -21,7 +29,7 @@ const Services = ({ serviceData }) => {
       {
         breakpoint: 1181,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
@@ -45,16 +53,20 @@ const Services = ({ serviceData }) => {
   };
 
   return (
-    <div className="container">
+    <Section className="container">
+      <Heading isLarge fontWeight isUppercase>
+        {data.CoursesTitle}
+      </Heading>
+      <div className="p-6">
+        <HorizontalLine />
+      </div>
       <Slider {...settings} ref={(slider) => (customSlider.current = slider)}>
         {serviceData.services &&
-          serviceData.services.map((item) => (
-            <ServiceCard backgroundCardImage item={item} />
-          ))}
+          serviceData.services.map((item) => <ServiceCard item={item} />)}
       </Slider>
       <ArrowSlider />
-    </div>
+    </Section>
   );
 };
 
-export default Services;
+export default Courses;

@@ -7,7 +7,8 @@ const Section = styled.div`
   margin-right: 0 !important;
 
   .card {
-    background-image: url('/images/service-item-bg.jpg');
+    background-image: ${(props) =>
+      props.backgroundCardImage ? `url('/images/service-item-bg.jpg')` : ''};
     background-size: cover;
     background-position: center center;
   }
@@ -20,9 +21,11 @@ const Section = styled.div`
   }
 `;
 
-const ServiceCard = ({ item }) => {
+const ServiceCard = ({ item, backgroundCardImage }) => {
   return (
-    <Section className="columns p-4 has-text-white">
+    <Section
+      className="columns p-4 has-text-white"
+      backgroundCardImage={backgroundCardImage}>
       <div className="column card has-text-centered has-text-white">
         <div className="card-content">
           <Image src={item.image} width={60} height={60} />

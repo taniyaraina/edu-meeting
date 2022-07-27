@@ -38,7 +38,9 @@ const HomeHero = ({ data, ...props }) => {
                 <p className="has-text-weight-semibold is-uppercase mb-2">
                   {data.homeHero.heroTag}
                 </p>
-                <Heading isUppercase>{data.homeHero.heroTitle}</Heading>
+                <Heading paddingNone isUppercase>
+                  {data.homeHero.heroTitle}
+                </Heading>
                 <p className="font-size">{data.homeHero.heroDescription}</p>
                 <Button bgcolor>{data.homeHero.buttonTitle}</Button>
               </div>
