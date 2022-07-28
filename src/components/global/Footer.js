@@ -13,7 +13,7 @@ const Section = styled.div`
 const Footer = ({ data }) => {
   return (
     <div>
-      <Section className="footer p-6 has-text-centered">
+      <Section className="footer section has-text-centered">
         <div>
           <p>{data.footerDescriptionOne}</p>
           <p>

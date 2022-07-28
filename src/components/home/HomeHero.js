@@ -12,11 +12,6 @@ const Section = styled.div`
     bottom: 0;
     height: 100%;
   }
-
-  .font-size {
-    font-size: ${(props) => props.theme.fontSize};
-    line-height: ${(props) => props.theme.lineHeight};
-  }
 `;
 
 const HomeHero = ({ data, ...props }) => {
@@ -38,10 +33,10 @@ const HomeHero = ({ data, ...props }) => {
                 <p className="has-text-weight-semibold is-uppercase mb-2">
                   {data.homeHero.heroTag}
                 </p>
-                <Heading paddingNone isUppercase>
+                <Heading paddingVerticalNone isUppercase>
                   {data.homeHero.heroTitle}
                 </Heading>
-                <p className="font-size">{data.homeHero.heroDescription}</p>
+                <p className="paragraph">{data.homeHero.heroDescription}</p>
                 <Button bgcolor>{data.homeHero.buttonTitle}</Button>
               </div>
             </div>

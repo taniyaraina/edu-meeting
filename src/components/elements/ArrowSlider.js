@@ -1,17 +1,14 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const Section = styled.div`
-  position: relative;
-  bottom: 10rem;
-  @media only screen and (max-width: 768px) {
-    position: relative;
-    justify-content: center;
-    .slider-arrow {
-      justify-content: center !important;
-    }
-  }
+  position: absolute;
+  top: 40%;
+  bottom: 50%;
+  right: 0;
+  left: 0;
+
   button {
     cursor: pointer;
     background-color: white;
@@ -36,9 +33,7 @@ const Section = styled.div`
   }
 `;
 
-const ArrowSlider = () => {
-  const customSlider = useRef();
-
+const ArrowSlider = ({ customSlider }) => {
   return (
     <Section className="slider-arrow is-hidden-mobile">
       <div className="is-flex is-justify-content-space-between">

@@ -42,6 +42,10 @@ body {
   background-position: center center !important;
   background-size: cover !important;
 }
+.paragraph {
+    font-size: ${theme.fontSize};
+    line-height: ${theme.lineHeight};
+  }
 .card,.input,textarea {border-radius: 20px !important;}
   input,textarea {
     border: none !important;

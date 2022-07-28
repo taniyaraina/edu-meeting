@@ -41,7 +41,7 @@ const ContactForm = ({ data }) => {
         </div>
       </div>
 
-      <Button bgcolor>{data.contactButton}</Button>
+      <Button bgColor>{data.contactButton}</Button>
     </Section>
   );
 };

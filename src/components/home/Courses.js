@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
-import ServiceCard from '../atoms/ServiceCard';
+import CourseCard from '../elements/CourseCard';
 import ArrowSlider from '../elements/ArrowSlider';
 import Heading from '../atoms/Heading';
 import HorizontalLine from '../atoms/HorizontalLine';
@@ -11,13 +11,17 @@ const Section = styled.div`
   .card {
     border-radius: 0px !important;
   }
+
+  .slick-dots li button:before {
+    color: white;
+  }
 `;
 
-const Courses = ({ data, serviceData }) => {
+const Courses = ({ data }) => {
   const customSlider = useRef();
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -54,17 +58,23 @@ const Courses = ({ data, serviceData }) => {
 
   return (
     <Section className="container">
-      <Heading isLarge fontWeight isUppercase>
-        {data.CoursesTitle}
-      </Heading>
-      <div className="p-6">
-        <HorizontalLine />
+      <div className="py-6">
+        <Heading isLarge fontWeight isUppercase>
+          {data.CoursesTitle}
+        </Heading>
+        <div className="pb-6">
+          <HorizontalLine />
+        </div>
+        <div className="is-relative mb-6">
+          <Slider
+            {...settings}
+            ref={(slider) => (customSlider.current = slider)}>
+            {data.courseCard &&
+              data.courseCard.map((item) => <CourseCard item={item} />)}
+          </Slider>
+          <ArrowSlider customSlider={customSlider} />
+        </div>
       </div>
-      <Slider {...settings} ref={(slider) => (customSlider.current = slider)}>
-        {serviceData.services &&
-          serviceData.services.map((item) => <ServiceCard item={item} />)}
-      </Slider>
-      <ArrowSlider />
     </Section>
   );
 };

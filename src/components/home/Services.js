@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import ArrowSlider from '../elements/ArrowSlider';
 
-import ServiceCard from '../atoms/ServiceCard';
+import ServiceCard from '../elements/ServiceCard';
 
 const Services = ({ serviceData }) => {
   const customSlider = useRef();
@@ -45,14 +45,20 @@ const Services = ({ serviceData }) => {
   };
 
   return (
-    <div className="container">
-      <Slider {...settings} ref={(slider) => (customSlider.current = slider)}>
-        {serviceData.services &&
-          serviceData.services.map((item) => (
-            <ServiceCard backgroundCardImage item={item} />
-          ))}
-      </Slider>
-      <ArrowSlider />
+    <div className="section">
+      <div className="container">
+        <div className="is-relative">
+          <Slider
+            {...settings}
+            ref={(slider) => (customSlider.current = slider)}>
+            {serviceData.services &&
+              serviceData.services.map((item) => (
+                <ServiceCard backgroundCardImage item={item} />
+              ))}
+          </Slider>
+          <ArrowSlider customSlider={customSlider} />
+        </div>
+      </div>
     </div>
   );
 };

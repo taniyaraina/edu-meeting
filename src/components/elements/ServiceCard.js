@@ -15,23 +15,17 @@ const Section = styled.div`
   h4 {
     font-size: ${(props) => props.theme.fontSizeMedium};
   }
-  p {
-    font-size: ${(props) => props.theme.fontSizeSmall};
-    line-height: ${(props) => props.theme.lineHeight};
-  }
 `;
 
 const ServiceCard = ({ item, backgroundCardImage }) => {
   return (
-    <Section
-      className="columns p-4 has-text-white"
-      backgroundCardImage={backgroundCardImage}>
-      <div className="column card has-text-centered has-text-white">
+    <Section backgroundCardImage={backgroundCardImage} className="px-5">
+      <div className=" card has-text-centered has-text-white">
         <div className="card-content">
           <Image src={item.image} width={60} height={60} />
           <h4 className="has-text-weight-semibold py-3">{item.title}</h4>
           <div className="content">
-            <p>{item.description}</p>
+            <p className="paragraph">{item.description}</p>
           </div>
         </div>
       </div>
