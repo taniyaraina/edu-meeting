@@ -31,31 +31,35 @@ const About = ({ data }) => {
         <div className="tile is-ancestor">
           <div className="tile">
             <div className="tile is-parent is-vertical is-5">
-              <article className="tile is-child card is-flex is-justify-content-center is-align-items-center">
-                <div className="has-text-centered">
-                  <div>
-                    <p className="title">hfghdjh</p>
-                    <p className="subtitle has-text-white has-text-weight-medium">
-                      Succesed Students
-                    </p>
-                  </div>
-                </div>
-              </article>
-              <article className="tile is-child notification card">
-                <p className="title">...tiles</p>
-                <p className="subtitle">Bottom tile</p>
-              </article>
+              {data.about &&
+                data.about.map((item) => (
+                  <article className="tile is-child card is-flex is-justify-content-center is-align-items-center">
+                    <div className="has-text-centered">
+                      <div>
+                        <p className="title">{item.aboutSubTitle}</p>
+                        <p className="subtitle has-text-white has-text-weight-medium">
+                          {item.aboutDescription}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
             </div>
 
             <div className="tile is-parent is-vertical is-5">
-              <article className="tile is-child notification card">
-                <p className="title">Vertical...</p>
-                <p className="subtitle">Top tile</p>
-              </article>
-              <article className="tile is-child notification card">
-                <p className="title">...tiles</p>
-                <p className="subtitle">Bottom tile</p>
-              </article>
+              {data.aboutUs &&
+                data.aboutUs.map((item) => (
+                  <article className="tile is-child card is-flex is-justify-content-center is-align-items-center">
+                    <div className="has-text-centered">
+                      <div>
+                        <p className="title">{item.aboutSubTitle}</p>
+                        <p className="subtitle has-text-white has-text-weight-medium">
+                          {item.aboutDescription}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
             </div>
           </div>
           <div className="tile is-parent is-5 p-0 is-relative">

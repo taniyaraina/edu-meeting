@@ -28,6 +28,7 @@ const theme = {
   fontWeight: '700',
   fontWeightBold: '800',
   dangerColor: '#f44336',
+  darkShades: '#1f272b',
   primaryFontFamily: "'Poppins', sans-serif",
 };
 
@@ -36,7 +37,7 @@ export default theme;
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: ${theme.primaryFontFamily} !important;
-  color: white;
+  color: ${theme.darkShades};
   background: url("/images/background-image.jpg") !important;
   background-attachment: fixed !important;
   background-position: center center !important;
@@ -46,13 +47,20 @@ body {
     font-size: ${theme.fontSize};
     line-height: ${theme.lineHeight};
   }
-.card,.input,textarea {border-radius: 20px !important;}
+.card,.input,textarea, .faq-card {border-radius: 20px !important;}
   input,textarea {
     border: none !important;
     box-shadow: none !important;
     background-color: #f7f7f7 !important;
     font-size: ${theme.fontSizeSmall} !important;
     color: #7a7a7a;
+  }
+  .card-onhover-red {
+    font-size: 15px;
+    color: ${theme.darkShades} !important;
+    :hover{
+      color: ${theme.primaryColor} !important;
+    }
   }
 `;
 

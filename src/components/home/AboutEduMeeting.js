@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Heading from '../atoms/Heading';
+import Faqs from './Faq';
 import Button from '../atoms/Button';
 
 const Section = styled.div`
@@ -24,7 +25,7 @@ const Section = styled.div`
 const AboutEduMeeting = ({ data }) => {
   return (
     <Section className="section">
-      <div className="container tile is-ancestor">
+      <div className="container tile is-ancestor mx-0 py-6">
         <div className="tile">
           <div className="tile is-parent is-vertical">
             {data.aboutEduMeeting &&
@@ -47,12 +48,8 @@ const AboutEduMeeting = ({ data }) => {
               ))}
           </div>
         </div>
-        <div className="tile is-parent p-0">
-          <article className="tile is-child notification card">
-            <p className="title">...tiles</p>
-            <p className="subtitle">Bottom tile</p>
-          </article>
-        </div>
+
+        <Faqs data={data} />
       </div>
     </Section>
   );

@@ -4,6 +4,10 @@ import Button from '../atoms/Button';
 import Heading from '../atoms/Heading';
 
 const Section = styled.div`
+  margin-bottom: -11rem;
+  @media screen and (min-width: 400px) {
+    margin-bottom: 0;
+  }
   .overlay {
     background-color: rgba(31, 39, 43, 0.75) !important;
     position: absolute;
@@ -37,7 +41,7 @@ const HomeHero = ({ data, ...props }) => {
                   {data.homeHero.heroTitle}
                 </Heading>
                 <p className="paragraph">{data.homeHero.heroDescription}</p>
-                <Button bgcolor>{data.homeHero.buttonTitle}</Button>
+                <Button bgColor>{data.homeHero.buttonTitle}</Button>
               </div>
             </div>
           </div>
