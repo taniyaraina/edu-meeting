@@ -37,7 +37,6 @@ export default theme;
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: ${theme.primaryFontFamily} !important;
-  color: ${theme.darkShades};
   background: url("/images/background-image.jpg") !important;
   background-attachment: fixed !important;
   background-position: center center !important;

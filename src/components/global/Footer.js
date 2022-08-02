@@ -14,7 +14,7 @@ const Footer = ({ data }) => {
   return (
     <div>
       <Section className="footer section has-text-centered">
-        <div>
+        <div className="has-text-white">
           <p>{data.footerDescriptionOne}</p>
           <p>
             DESIGN:
