@@ -5,7 +5,7 @@ import Heading from '../atoms/Heading';
 
 const Section = styled.div`
   margin-bottom: -11rem;
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 400px && max-height: 768px) {
     margin-bottom: 0;
   }
   .overlay {
