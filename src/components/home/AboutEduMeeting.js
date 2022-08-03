@@ -24,7 +24,7 @@ const Section = styled.div`
 
 const AboutEduMeeting = ({ data }) => {
   return (
-    <Section className="section">
+    <Section className="section" id="aboutEdu">
       <div className="container tile is-ancestor mx-0 py-6">
         <div className="tile">
           <div className="tile is-parent is-vertical">

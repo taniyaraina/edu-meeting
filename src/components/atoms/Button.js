@@ -10,12 +10,20 @@ const Section = styled.div`
   }
 `;
 
-const Button = ({ className, children, bgColor, ...props }) => {
+const Button = ({
+  className,
+  children,
+  bgColor,
+  paddingHorizontal,
+  ...props
+}) => {
   return (
-    <Section bgColor={bgColor}>
+    <Section bgColor={bgColor} paddingHorizontal={paddingHorizontal}>
       <button
         type="button"
-        className="button is-rounded px-5 py-5 is-size has-text-weight-medium has-text-white is-uppercase"
+        className={`button is-rounded ${
+          paddingHorizontal ? 'px-6' : 'px-5'
+        } py-5 is-size has-text-weight-medium has-text-white is-uppercase`}
         {...props}>
         <span>{children}</span>
       </button>

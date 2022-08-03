@@ -11,7 +11,7 @@ const Section = styled.div`
 
 const Contact = ({ data }) => {
   return (
-    <div className="section">
+    <div className="section" id="contact">
       <Section className="container columns is-vcentered my-6 py-6">
         <div className="column is-9">
           <ContactForm data={data} />

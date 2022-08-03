@@ -41,6 +41,7 @@ body {
   background-attachment: fixed !important;
   background-position: center center !important;
   background-size: cover !important;
+  font-size: ${theme.fontSize};
 }
 .paragraph {
     font-size: ${theme.fontSize};
@@ -60,6 +61,12 @@ body {
     :hover{
       color: ${theme.primaryColor} !important;
     }
+  }
+  .hero-background-image {
+    background-image: url(../images/heading-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 `;
 

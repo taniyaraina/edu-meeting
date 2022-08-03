@@ -22,14 +22,13 @@ const HomeHero = ({ data, ...props }) => {
   return (
     <Section>
       <div className="is-relative">
-        <div>
-          <figure className="image pt-0">
-            <video autoPlay muted loop width="100%" height="100%">
-              <track kind="captions" {...props} />
-              <source src="/images/course-video.mp4" />
-            </video>
-          </figure>
-        </div>
+        <figure className="image pt-0">
+          <video autoPlay muted loop width="100%" height="100%">
+            <track kind="captions" {...props} />
+            <source src="/images/course-video.mp4" />
+          </video>
+        </figure>
+
         <div className="overlay content has-text-white is-flex is-align-items-center">
           <div className="section is-medium">
             <div className="columns">

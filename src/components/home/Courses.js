@@ -57,8 +57,8 @@ const Courses = ({ data }) => {
   };
 
   return (
-    <Section className="container">
-      <div className="py-6">
+    <Section className="section" id="courses">
+      <div className="container">
         <Heading isLarge fontWeight isUppercase>
           {data.CoursesTitle}
         </Heading>

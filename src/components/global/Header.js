@@ -57,12 +57,12 @@ const Header = () => {
                 Home
               </a>
             </Link>
-            <Link href="/post">
+            <Link href="/meeting">
               <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Meetings
               </a>
             </Link>
-            <Link href="/about">
+            <Link href="#aboutEdu">
               <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Apply Now
               </a>
@@ -79,7 +79,7 @@ const Header = () => {
                   </a>
                 </Link>
                 <hr className="navbar-divider" />
-                <Link href="#contact">
+                <Link href="/meeting">
                   <a className="navbar-item has-text-black hover-margin">
                     Meeting Details
                   </a>
@@ -87,7 +87,7 @@ const Header = () => {
               </div>
             </div>
 
-            <Link href="#contact">
+            <Link href="#courses">
               <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Courses
               </a>

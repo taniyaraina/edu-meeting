@@ -65,15 +65,11 @@ const About = ({ data }) => {
           <div className="tile is-parent is-5 p-0 is-relative">
             <article className="tile is-child ">
               <figure className="image is-4by3 ">
-                <Image
-                  className="card "
-                  src="/images/video-item-bg.jpg"
-                  layout="fill"
-                />
+                <Image className="card " src={data.aboutImage} layout="fill" />
               </figure>
 
               <figure className="image is-64x64">
-                <Image src="/images/play-icon.png" layout="fill" />
+                <Image src={data.aboutImagePlayIcon} layout="fill" />
               </figure>
             </article>
           </div>

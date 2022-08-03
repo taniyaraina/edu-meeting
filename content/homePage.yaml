@@ -74,6 +74,8 @@ courseCard:
     price: $400
 
 aboutTitle: A Few Facts About Our University
+aboutImage: '/images/video-item-bg.jpg'
+aboutImagePlayIcon: '/images/play-icon.png'
 
 about:
   - aboutSubTitle: 94%

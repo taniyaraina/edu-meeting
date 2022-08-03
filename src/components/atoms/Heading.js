@@ -15,7 +15,7 @@ const Section = styled.h1`
 const Heading = ({
   children,
   fontWeight,
-  fontSize,
+  isLarge,
   isBlack,
   isUppercase,
   paddingVerticalNone,
@@ -24,7 +24,7 @@ const Heading = ({
   return (
     <Section
       fontWeight={fontWeight}
-      fontSize={fontSize}
+      isLarge={isLarge}
       paddingVerticalNone={paddingVerticalNone}
       {...props}
       className={`${isUppercase ? 'is-uppercase' : ''}  is-size-3-mobile ${
