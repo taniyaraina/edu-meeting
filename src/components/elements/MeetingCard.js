@@ -7,8 +7,13 @@ const Section = styled.div`
   .is-multiline {
     flex-wrap: wrap !important;
   }
-  .card {
-    height: 100%;
+  .card-size {
+    border-radius: 10px !important;
+    background-color: rgba(250, 250, 250, 0.9);
+    padding: 7px 12px;
+    position: absolute;
+    top: 7%;
+    left: 5%;
   }
   .content-color {
     color: ${(props) => props.theme.darkShades} !important;
@@ -33,7 +38,7 @@ const MeetingCard = ({ posts, isSecondary }) => {
               } is-child m-2 p-4`}>
               <Link href={`/meeting/${item?.slug}`}>
                 <a>
-                  <div className="has-text-centered card">
+                  <div className="has-text-centered card is-relative">
                     <div className="card-image">
                       <figure className="image is-16by9 card">
                         <Image
@@ -41,6 +46,11 @@ const MeetingCard = ({ posts, isSecondary }) => {
                           src={item.image}
                           layout="fill"
                         />
+                        <div className="card-size card">
+                          <p className="content-color has-text-weight-semibold">
+                            {item.price}
+                          </p>
+                        </div>
                       </figure>
                     </div>
                     <div className="card-content content-color">

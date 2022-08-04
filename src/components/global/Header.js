@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
@@ -37,10 +37,22 @@ const Nav = styled.div`
   }
 `;
 
-const Header = ({ posts }) => {
+const Header = ({ post }) => {
+  const [colorChange, setColorchange] = useState(false);
+  // const changeNavbarColor = () => {
+  //   if (window?.scrollY >= 80) {
+  //     setColorchange(true);
+  //   } else {
+  //     setColorchange(false);
+  //   }
+  // };
+  // window?.addEventListener('scroll', changeNavbarColor);
   return (
     <Nav>
-      <nav className="section navbar is-fixed-top py-4">
+      <nav
+        className={`section is-fixed-top py-4 ${
+          colorChange ? 'has-background-white' : 'navbar'
+        }`}>
         <div className="navbar-brand">
           <Link href="/">
             <a className="navbar-item is-size-3 has-text-weight-semibold is-uppercase has-text-white">
@@ -85,7 +97,7 @@ const Header = ({ posts }) => {
                   </a>
                 </Link>
                 <hr className="navbar-divider" />
-                <Link href={`/meeting/${posts?.slug}`}>
+                <Link href={`/meeting/${post?.slug}`}>
                   <a className="navbar-item has-text-black hover-margin">
                     Meeting Details
                   </a>

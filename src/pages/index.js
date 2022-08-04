@@ -13,6 +13,7 @@ import Meetings from '../components/home/Meetings';
 import { getMdxFromDir } from '../utils/helpers';
 
 const index = ({ posts }) => {
+  console.log(posts);
   return (
     <Layout data={homeData} post={posts[0]}>
       <HomeHero data={homeData} />
