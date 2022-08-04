@@ -24,7 +24,7 @@ const meeting = ({ posts }) => {
         </section>
         <div className="section">
           <div className="container py-6">
-            <div className="columns is-justify-content-center">
+            <div className="columns is-justify-content-center is-hidden-mobile">
               <div className="pr-2">
                 <Button bgColor>{meetData.topButtonOne}</Button>
               </div>
