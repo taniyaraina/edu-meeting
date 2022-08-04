@@ -9,8 +9,9 @@ const Section = styled.div`
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  .tile.is-child.card {
+  .card {
     background-color: rgba(250, 250, 250, 0.15);
+    height: 100%;
   }
   .title {
     color: ${(props) => props.theme.lightShades};
@@ -30,39 +31,21 @@ const About = ({ data }) => {
         <Heading fontWeight>{data.aboutTitle}</Heading>
         <div className="tile is-ancestor">
           <div className="tile">
-            <div className="tile is-parent is-vertical is-5">
+            <div className="tile is-parent is-multiline is-12">
               {data.about &&
                 data.about.map((item) => (
-                  <article className="tile is-child card is-flex is-justify-content-center is-align-items-center">
-                    <div className="has-text-centered">
-                      <div>
-                        <p className="title">{item.aboutSubTitle}</p>
-                        <p className="subtitle has-text-white has-text-weight-medium">
-                          {item.aboutDescription}
-                        </p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-            </div>
-
-            <div className="tile is-parent is-vertical is-5">
-              {data.aboutUs &&
-                data.aboutUs.map((item) => (
-                  <article className="tile is-child card is-flex is-justify-content-center is-align-items-center">
-                    <div className="has-text-centered">
-                      <div>
-                        <p className="title">{item.aboutSubTitle}</p>
-                        <p className="subtitle has-text-white has-text-weight-medium">
-                          {item.aboutDescription}
-                        </p>
-                      </div>
+                  <article className="tile is-child is-6 m-2 p-4">
+                    <div className="card is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
+                      <p className="title">{item.aboutSubTitle}</p>
+                      <p className="subtitle has-text-white has-text-weight-medium">
+                        {item.aboutDescription}
+                      </p>
                     </div>
                   </article>
                 ))}
             </div>
           </div>
-          <div className="tile is-parent is-5 p-0 is-relative">
+          <div className="tile is-parent is-5 is-relative">
             <article className="tile is-child ">
               <figure className="image is-4by3 ">
                 <Image className="card " src={data.aboutImage} layout="fill" />

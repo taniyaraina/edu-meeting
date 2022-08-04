@@ -72,6 +72,9 @@ body {
     border-top-left-radius: 20px !important;
     border-top-right-radius: 20px !important;
   }
+  .is-multiline {
+    flex-wrap: wrap !important;
+  }
 
 `;
 
