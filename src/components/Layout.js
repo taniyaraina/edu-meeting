@@ -6,10 +6,10 @@ const Container = styled.div`
   min-height: 70vh;
 `;
 
-const Layout = ({ children, data }) => {
+const Layout = ({ children, data, post }) => {
   return (
     <div>
-      <Header />
+      <Header post={post} />
       <Container>{children}</Container>
       <Footer data={data} />
     </div>

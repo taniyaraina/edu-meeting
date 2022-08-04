@@ -6,6 +6,7 @@ homeHero:
 
 UpcomingMeetings:
   title: Upcoming Meetings
+  subTitle: Meeting Catgories
   Button: All Upcoming Meetings
 
 MeetingRightCard:

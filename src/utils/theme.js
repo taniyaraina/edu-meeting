@@ -68,6 +68,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+    .image-border {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
+
 `;
 
 export { GlobalStyle };

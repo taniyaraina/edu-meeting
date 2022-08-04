@@ -14,6 +14,12 @@ const Nav = styled.div`
       background-color: transparent !important;
     }
   }
+  a.has-text-white:focus {
+    color: ${(props) => props.theme.secondaryColor} !important;
+  }
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent !important;
+  }
   .navbar-link {
     :hover {
       color: ${(props) => props.theme.secondaryColor} !important;
@@ -31,7 +37,7 @@ const Nav = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ posts }) => {
   return (
     <Nav>
       <nav className="section navbar is-fixed-top py-4">
@@ -62,24 +68,24 @@ const Header = () => {
                 Meetings
               </a>
             </Link>
-            <Link href="#aboutEdu">
+            <Link href="/#aboutEdu">
               <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Apply Now
               </a>
             </Link>
 
             <div className="navbar-item has-dropdown is-hoverable is-uppercase">
-              <Link href="#contact">
+              <Link href="/#contact">
                 <a className="navbar-link has-text-white">Pages</a>
               </Link>
               <div className="navbar-dropdown is-boxed">
-                <Link href="#contact">
+                <Link href="/meeting">
                   <a className="navbar-item has-text-black hover-margin">
                     Upcoming Meetings
                   </a>
                 </Link>
                 <hr className="navbar-divider" />
-                <Link href="/meeting">
+                <Link href={`/meeting/${posts?.slug}`}>
                   <a className="navbar-item has-text-black hover-margin">
                     Meeting Details
                   </a>
@@ -87,12 +93,12 @@ const Header = () => {
               </div>
             </div>
 
-            <Link href="#courses">
+            <Link href="/#courses">
               <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Courses
               </a>
             </Link>
-            <Link href="#contact">
+            <Link href="/#contact">
               <a className="navbar-item has-text-weight-medium is-uppercase has-text-white">
                 Contact Us
               </a>

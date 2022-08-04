@@ -1,23 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 import CardHeading from '../atoms/CardHeading';
 import Heading from '../atoms/Heading';
 import HorizontalLine from '../atoms/HorizontalLine';
 import Button from '../atoms/Button';
+import MeetingCard from '../elements/MeetingCard';
 
-const Section = styled.div`
-  .is-multiline {
-    flex-wrap: wrap !important;
-  }
-  .card {
-    height: 100%;
-  }
-`;
-
-const Meetings = ({ data }) => {
+const Meetings = ({ data, posts }) => {
   return (
-    <Section className="section">
+    <div className="section">
       <div className="container">
         <div className="has-text-centered">
           <Heading isLarge fontWeight isUppercase>
@@ -31,7 +22,7 @@ const Meetings = ({ data }) => {
           <div className="tile is-parent is-vertical is-4">
             <article className="tile is-child">
               <div className="card p-5 mt-2">
-                <CardHeading>Meeting Catgories</CardHeading>
+                <CardHeading>{data.UpcomingMeetings.subTitle}</CardHeading>
                 <HorizontalLine borderColor />
                 <aside className="menu p-3">
                   {data.MeetingRightCard.map((item) => (
@@ -49,52 +40,20 @@ const Meetings = ({ data }) => {
                     <HorizontalLine borderColor />
                   </div>
                   <div className="pt-5 mt-1">
-                    <Button bgColor>{data.UpcomingMeetings.Button}</Button>
+                    <Link href="/meeting">
+                      <a>
+                        <Button bgColor>{data.UpcomingMeetings.Button}</Button>
+                      </a>
+                    </Link>
                   </div>
                 </aside>
               </div>
             </article>
           </div>
-          <div className="tile is-parent is-8 is-multiline">
-            <article className="tile is-6 is-child m-2 p-4">
-              <div className="has-text-centered card">
-                <div>hnk</div>
-              </div>
-            </article>
-            <article className="tile is-6 is-child m-2">
-              <div className="has-text-centered card">
-                <div>hnk</div>
-              </div>
-            </article>{' '}
-            <article className="tile is-6 is-child m-2">
-              <div className="has-text-centered card">
-                <div>hnk</div>
-              </div>
-            </article>{' '}
-            <article className="tile is-6 is-child m-2">
-              <div className="has-text-centered card">
-                <div>hnk</div>
-              </div>
-            </article>{' '}
-            <article className="tile is-6 is-child m-2">
-              <div className="has-text-centered card">
-                <div>hnk</div>
-              </div>
-            </article>{' '}
-            <article className="tile is-6 is-child m-2">
-              <div className="has-text-centered card">
-                <div>hnk</div>
-              </div>
-            </article>{' '}
-            <article className="tile is-6 is-child m-2">
-              <div className="has-text-centered card">
-                <div>hnk</div>
-              </div>
-            </article>
-          </div>
+          <MeetingCard posts={posts} />
         </div>
       </div>
-    </Section>
+    </div>
   );
 };
 

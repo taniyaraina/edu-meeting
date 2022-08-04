@@ -7,6 +7,10 @@ const Section = styled.div`
       props.bgColor ? props.theme.mainBrandColor : props.theme.lightShades};
     font-size: ${(props) => props.theme.fontSizeSmall};
     border: none !important;
+    :hover {
+      background-color: ${(props) =>
+        props.bgHoverColor ? props.theme.mainBrandColor : ''};
+    }
   }
 `;
 
@@ -15,10 +19,14 @@ const Button = ({
   children,
   bgColor,
   paddingHorizontal,
+  bgHoverColor,
   ...props
 }) => {
   return (
-    <Section bgColor={bgColor} paddingHorizontal={paddingHorizontal}>
+    <Section
+      bgColor={bgColor}
+      paddingHorizontal={paddingHorizontal}
+      bgHoverColor={bgHoverColor}>
       <button
         type="button"
         className={`button is-rounded ${
