@@ -7,9 +7,7 @@ const Section = styled.h1`
       ? props.theme.fontWeight
       : props.theme.fontWeightBold} !important;
   font-size: ${(props) =>
-    props.isLarge
-      ? props.theme.fontSizeLarge
-      : props.theme.fontSizeExtraLarge} !important;
+    props.isLarge ? props.theme.fontSizeLarge : props.theme.fontSizeExtraLarge};
 `;
 
 const Heading = ({
@@ -27,7 +25,7 @@ const Heading = ({
       isLarge={isLarge}
       paddingVerticalNone={paddingVerticalNone}
       {...props}
-      className={`${isUppercase ? 'is-uppercase' : ''}  is-size-3-mobile ${
+      className={`${isUppercase ? 'is-uppercase' : ''}  is-size-4-mobile ${
         isBlack ? 'has-text-black' : 'has-text-white'
       } ${paddingVerticalNone ? 'py-0' : 'py-4'}`}>
       {children}

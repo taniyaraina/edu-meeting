@@ -3,10 +3,28 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const Nav = styled.div`
-  .navbar {
+  .bg-transparent {
     background-color: rgba(250, 250, 250, 0.15) !important;
+    .navbar-burger span {
+      background-color: white !important;
+    }
+    @media screen and (max-width: 768px) {
+      .clr-black-mobile {
+        color: black !important;
+      }
+    }
   }
-  a {
+  .has-background-white {
+    .navbar-item,
+    .navbar-link {
+      color: black !important;
+    }
+    .navbar-link:not(.is-arrowless)::after {
+      border-color: black;
+    }
+  }
+  a,
+  .navbar-item {
     transition: 0.2s;
     font-size: ${(props) => props.theme.fontSize};
     :hover {
@@ -35,23 +53,29 @@ const Nav = styled.div`
   .hover-margin:hover {
     margin-left: 0.5rem;
   }
+  ${
+    '' /* .navbar-burger span {
+    background-color: white !important;
+  } */
+  }
 `;
 
 const Header = ({ post }) => {
+  const [open, setOpen] = useState(false);
   const [colorChange, setColorchange] = useState(false);
-  // const changeNavbarColor = () => {
-  //   if (window?.scrollY >= 80) {
-  //     setColorchange(true);
-  //   } else {
-  //     setColorchange(false);
-  //   }
-  // };
-  // window?.addEventListener('scroll', changeNavbarColor);
+  const changeNavbarColor = () => {
+    if (window?.scrollY >= 80) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+  window?.addEventListener('scroll', changeNavbarColor);
   return (
     <Nav>
       <nav
-        className={`section is-fixed-top py-4 ${
-          colorChange ? 'has-background-white' : 'navbar'
+        className={`section is-fixed-top navbar py-4 ${
+          colorChange ? 'has-background-white' : 'bg-transparent'
         }`}>
         <div className="navbar-brand">
           <Link href="/">
@@ -59,46 +83,56 @@ const Header = ({ post }) => {
               Edu Meeting
             </a>
           </Link>
-          <div
+          <button
+            type="button"
             className="navbar-burger"
-            data-target="navbarExampleTransparentExample">
-            <span />
-            <span />
-            <span />
-          </div>
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarExampleTransparentExample"
+            onClick={() => {
+              setOpen(!open);
+            }}>
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
         </div>
 
-        <div id="navbarExampleTransparentExample" className="navbar-menu">
+        <div
+          id="navbarExampleTransparentExample"
+          className={`navbar-menu ${open ? 'is-active' : ''}`}>
           <div className="navbar-end">
             <Link href="/">
-              <a className="navbar-item has-text-weight-medium is-uppercase has-text-white">
+              <a className="navbar-item clr-black-mobile has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Home
               </a>
             </Link>
             <Link href="/meeting">
-              <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
+              <a className="navbar-item clr-black-mobile has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Meetings
               </a>
             </Link>
             <Link href="/#aboutEdu">
-              <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
+              <a className="navbar-item clr-black-mobile has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Apply Now
               </a>
             </Link>
 
             <div className="navbar-item has-dropdown is-hoverable is-uppercase">
               <Link href="/#contact">
-                <a className="navbar-link has-text-white">Pages</a>
+                <a className="navbar-link clr-black-mobile mx-3 has-text-white">
+                  Pages
+                </a>
               </Link>
               <div className="navbar-dropdown is-boxed">
                 <Link href="/meeting">
-                  <a className="navbar-item has-text-black hover-margin">
+                  <a className="navbar-item clr-black-mobile has-text-black hover-margin">
                     Upcoming Meetings
                   </a>
                 </Link>
                 <hr className="navbar-divider" />
                 <Link href={`/meeting/${post?.slug}`}>
-                  <a className="navbar-item has-text-black hover-margin">
+                  <a className="navbar-item clr-black-mobile has-text-black hover-margin">
                     Meeting Details
                   </a>
                 </Link>
@@ -106,12 +140,12 @@ const Header = ({ post }) => {
             </div>
 
             <Link href="/#courses">
-              <a className="navbar-item has-text-weight-medium mx-3 is-uppercase has-text-white">
+              <a className="navbar-item clr-black-mobile has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Courses
               </a>
             </Link>
             <Link href="/#contact">
-              <a className="navbar-item has-text-weight-medium is-uppercase has-text-white">
+              <a className="navbar-item clr-black-mobile has-text-weight-medium mx-3 is-uppercase has-text-white">
                 Contact Us
               </a>
             </Link>

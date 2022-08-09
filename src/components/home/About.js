@@ -35,7 +35,7 @@ const About = ({ data }) => {
               {data.about &&
                 data.about.map((item) => (
                   <article className="tile is-child is-6 m-2 p-4">
-                    <div className="card is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
+                    <div className="card is-flex is-flex-direction-column is-align-items-center is-justify-content-center p-3">
                       <p className="title">{item.aboutSubTitle}</p>
                       <p className="subtitle has-text-white has-text-weight-medium">
                         {item.aboutDescription}

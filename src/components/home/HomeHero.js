@@ -5,7 +5,7 @@ import Heading from '../atoms/Heading';
 
 const Section = styled.div`
   margin-bottom: -11rem;
-  @media screen and (min-width: 400px && max-height: 768px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 0;
   }
   .overlay {
@@ -16,13 +16,17 @@ const Section = styled.div`
     bottom: 0;
     height: 100%;
   }
+  video {
+    min-height: 62vh;
+    object-fit: cover;
+  }
 `;
 
 const HomeHero = ({ data, ...props }) => {
   return (
     <Section>
       <div className="is-relative">
-        <figure className="image pt-0">
+        <figure className="image pt-0 is-4by5">
           <video autoPlay muted loop width="100%" height="100%">
             <track kind="captions" {...props} />
             <source src="/images/course-video.mp4" />
