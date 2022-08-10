@@ -6,7 +6,7 @@ import Heading from '../atoms/Heading';
 import HorizontalLine from '../atoms/HorizontalLine';
 
 const Section = styled.div`
-  margin-left: 0;
+  ${'' /* margin-left: 0; */}
 `;
 
 const ContactForm = ({ data }) => {
